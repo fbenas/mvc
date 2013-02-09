@@ -8,5 +8,5 @@
     define('SITE_ROOT' , 'http://a.fbeans.of.je');
 
     // Fetch the router
-    require_once(SERVER_ROOT . '/controllers/' . 'router.php');
+    require_once(SERVER_ROOT . 'controllers/' . 'router.php');
 ?>
