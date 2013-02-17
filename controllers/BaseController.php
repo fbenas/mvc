@@ -3,32 +3,28 @@
 /*
  * This file handles the retieval anbd serving of news articles
  */
-class News_Controller
+Class BaseController
 {
     /*
      * This templatye variable will hold the 'view' portion of our MVC
      * for this controller
      */
-    public  $template = 'news';
+    protected $template = 'Test';
 
     /*
      * This is the default function that will be valled by router.php
      *
      * @param array $getVars the GET variable posted to index.php
      */
-    public function main( array $getVars )
+    public function main()
     {
-        $newsModel = new News_Model;
-
+        $test_model = new TestModel;
         // get an article
-        $article = $newsModel->get_article($getVars['article']);
-
+        $data = $test_model->get_data();
         // create a new view and pass it our template 
-        $view = new View_Model($this->template);
-
-        // assign article data to view
-        $view->assign('title', $article['title']);
-        $view->assign('content', $article['content']);
+        $view = new ViewModel($this->template);
+        // Pass all the model data to the view_model object.
+        $view->set_data($data);
     }
 }
 ?>

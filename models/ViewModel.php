@@ -2,7 +2,7 @@
 /*
  * Handles the view functionality of our MVC framework
  */
-class View_Model
+class ViewModel
 {
     /*
      * Holds variables assigned to template
@@ -13,6 +13,7 @@ class View_Model
      * Holds render status of view.
      */
     private $render = FALSE;
+    private $class = FALSE;
 
     /*
      * Accept a template to load
@@ -20,8 +21,7 @@ class View_Model
     public function __construct( $template )
     {
         // compose file name
-        $file = SERVER_ROOT . '/views/' . strtolower( $template ) . '.php';
-
+        $file = SERVER_ROOT . 'views/' . $template . 'View.php';
         if (file_exists( $file ))
         {
             /*
@@ -30,6 +30,7 @@ class View_Model
              * to the view!
              */
             $this->render = $file;
+            $this->class = $template;
         }
     }
 
@@ -44,12 +45,22 @@ class View_Model
         $this->data[$variable] = $value;
     }
 
+    public function set_data( $data_value )
+    {
+        $this->data = $data_value;
+    }
+
     public function __destruct()
     {
+        include_once(SERVER_ROOT . "utils/PhpStringParser.php");
         // parse data variables into local variables, so that they render to the view
         $data = $this->data;
 
         // render view
         include($this->render);
+        $view = new $this->class;
+		$p = new PhpStringParser($data);
+		print $p->parse($view->get_page_all());
     }
 }
+?>

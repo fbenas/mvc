@@ -7,11 +7,9 @@
 // Automatically includes files containing classes that are called
 function __autoload( $className )
 {
-    // parse  out filename where class shold be located
-    list( $filename , $suffix ) = explode( '_' , $className );
 
-    // compose file name
-    $file = SERVER_ROOT . '/models/' .strtolower( $filename ) . '.php';
+    // compose file name for model
+    $file = SERVER_ROOT . 'models/' . $className . '.php';
 
     // fetch file
     if ( file_exists( $file ))
@@ -22,7 +20,7 @@ function __autoload( $className )
     else
     {
         // file does not exist!
-        die("File '$filename' containing class '$className' not found.");
+        die("File '$file' containing class '$className' not found.");
     }
 }
 
@@ -33,7 +31,7 @@ $request = $_SERVER['QUERY_STRING'];
 $parsed = explode( '&', $request );
 
 // the page is the first element
-$page = array_shift( $parsed );
+$page = ucfirst(array_shift( $parsed )) . "Controller";
 
 // the rest of thye array are get statements, parse them out.
 $getVars = array();
@@ -51,12 +49,14 @@ $target = SERVER_ROOT . 'controllers/' . $page . '.php';
 if (file_exists( $target ))
 {
     include_once( $target );
+
     // modify page to fit naming convention
-    $class = ucfirst( $page ) . '_Controller';
+    $class = ucfirst( $page );
 
     // inistantiate the approptiate class
     if ( class_exists( $class ))
     {
+
         $controller = new $class;
     }
     else
@@ -68,10 +68,10 @@ if (file_exists( $target ))
 else
 {
     // can't find the file in 'controllers'!
-    die('page does not exist!');
+    die('page "' . $target .'" does not exist!');
 }
 
 // once we have the controller instantiated, execute the default function
 // pass any GET varaibles to the main method
 $controller->main( $getVars );
-?>
+?>  
