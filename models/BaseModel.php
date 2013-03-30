@@ -1,9 +1,12 @@
 <?php
+
+include_once(SERVER_ROOT . "models/BaseModel.php");
+
 /*
  * The News Model does the back-end heavy lifting for the News Controller
  */
 
-class BaseModel
+Class BaseModel
 {
     /*
      * Array of articles. Array keys are titles, array values are corresponding
@@ -12,9 +15,7 @@ class BaseModel
     private $data = array
     (
         // article 1
-        'page_stylesheet' => "/stylesheets/stylesheet.css",
         'page_title' => "Base Page",
-        'page_script' => "/stylesheets/base_script.js",
         'page_keywords' => "kayaking, kayakporn, boats, boat, boating, paddle, paddeling, videos, media, gopro",
         'page_description' => "The base page for kayakporn.com",
         'page_author' => "Kayakporn.com",

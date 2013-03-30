@@ -6,5 +6,6 @@ include_once(SERVER_ROOT . "controllers/BaseController.php");
  */
 Class TestController extends BaseController
 {
+        protected $template = "Test";
 }
 ?>

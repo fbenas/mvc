@@ -1,6 +1,6 @@
 <?php
 include_once(SERVER_ROOT . "/views/BaseView.php");
-Class Test extends BaseView
+Class TestView extends BaseView
 {
     protected function get_page_header()
     {

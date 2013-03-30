@@ -9,8 +9,7 @@ function __autoload( $className )
 {
 
     // compose file name for model
-    $file = SERVER_ROOT . 'models/' . $className . '.php';
-
+    $file = SERVER_ROOT . 'models/' . $className . 'Model.php';
     // fetch file
     if ( file_exists( $file ))
     {

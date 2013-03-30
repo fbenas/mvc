@@ -13,11 +13,11 @@
             // returns the whole html page as a strings
             $all_html = <<<EOD
 <!DOCTYPE html>
-<html>
+<html class='base_class'>
     <head>
         <title><?=\$page_title;?></title>
-        <link rel='stylesheet' type='text/css' href='<?=\$page_stylesheet;?>'>
-        <script type='text/javascript' src='<?=\$page_script;?>'></script>
+        {$this->get_css()}
+        {$this->get_script()}
         <meta charset='UTF-8'>
         <meta name='keywords' content='<?=\$page_keywords;?>'>
         <meta name='author' content='<?=\$page_author;?>'>
@@ -48,12 +48,20 @@ EOD;
             return $this->page_footer;
         }
 
+        protected function get_script()
+        {
+        }
+
+        protected function get_css()
+        {
+        }
+
         // HTML BODY
         private $page_header;
         private $page_content;
         private $page_footer;
 
-        private function init_html_strings()
+        protected function init_html_strings()
         {
             // HTML BODY
             $this->page_header = <<<EOD

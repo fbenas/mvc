@@ -1,0 +1,13 @@
+li.mykp_in {
+    margin-left: 100px;
+    padding: 10px;
+}
+
+li.mykp_in p {
+    display: inline;
+}
+
+li.mykp_in a {
+    text-decoration: none;
+    color: white;
+}

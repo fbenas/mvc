@@ -2,7 +2,7 @@
 /*
  * Handles the view functionality of our MVC framework
  */
-class ViewModel
+Class ViewModel
 {
     /*
      * Holds variables assigned to template
@@ -21,7 +21,7 @@ class ViewModel
     public function __construct( $template )
     {
         // compose file name
-        $file = SERVER_ROOT . 'views/' . $template . 'View.php';
+        $file = SERVER_ROOT . 'views/' . $template . '.php';
         if (file_exists( $file ))
         {
             /*
