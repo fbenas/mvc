@@ -1,0 +1,71 @@
+div.content {
+    margin: 0px auto;
+    padding: 10px;
+    min-width: 800px;
+    min-height: 600px;
+    width: 80%;
+    height: 600px;
+    box-shadow: 0px 0px 10px 10px;
+}
+
+div.homeleft {
+    float: left;
+    width: 59%;
+    min-width: 474px;    
+    height: 600px;
+}
+
+div.homeright {
+    padding-left: 10px;
+    border-left: 1px solid #404040;
+    float: right;
+    width: 38%;
+    min-width: 314px;
+    height: 600px;
+}
+
+div.featured {
+    border-bottom: 1px solid #404040;
+    height: 350px;
+}
+
+div.news {
+    padding-top: 5px;
+    height: 250px;
+}
+
+/* Buliding on css from core.css */
+div.featured_video {
+    width: 80%;
+}
+
+/* CAROUSEL BUTTONS */
+#left_button {
+    float: left;
+    background-color: red;
+    height: 300px;
+    width: 10%;
+    margin: 0 auto;
+}
+
+#right_button {
+    float:right;
+    background-color: red;
+    height:300px;
+    width: 10%;
+    margin: 0 auto;
+}
+
+div.controls {
+    width: 100%;
+    height: 30px;
+    background-color: white;
+}
+
+/* News */
+div.news img {
+    height: 100px;
+    width: 100px;
+    padding-right: 5px;
+    float: left;
+}

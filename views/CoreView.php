@@ -47,6 +47,7 @@ EOD;
                 <li><a href="http://www.vimeo.com">Vimeo</a></li>
                 <li><a href="https://www.facebook.com/groups/311351108885061">Facebook Group</a></li>
                 <li><a href="index.php?RegisterPage">Register</a></li>
+                <li><a href="index.php?Advertise">Advertise</a></li>
             </ul>
         </div>
 EOD;
@@ -58,6 +59,7 @@ EOD;
         return <<<EOD
         <ul>
             <li class="current"><a href="index.php?Home">Home</a></li>
+            <li><a href="index.php?News">News</a></li>
             <li><a href="index.php?Featured">Featured</a></li>
             <li><a href="index.php?Latest">Latest</a></li>
             <li><a href="index.php?MostViewed">Most Viewed</a></li>
@@ -76,6 +78,20 @@ EOD;
     {
         return "<link rel='stylesheet' type='text/css' href='/stylesheets/core.css'>";
     }
+
+    // Possibly change this to take a Video as parameter
+    protected function show_featuerd_video($url, $width, $height)
+    {
+        return <<<EOD
+        <div class="featured_video">
+                <iframe src="$url" width="$width" height="$height" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                <p>This is the paragraph that sums up this <a href="#">Featured Video!</a>
+                    It's actually a proper, cool, wicked-awesome video! And I like it!
+                </p>
+        </div>
+EOD;
+    }
+
 }
 
 ?>

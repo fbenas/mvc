@@ -1,6 +1,13 @@
 /* LONE ELEMENTS */
 body {
-    margin: auto;
+    margin: 0px auto;
+    min-height: 800px;
+}
+
+a, a:visited {
+    text-decoration: none;
+    font-family: "Arial";
+    color: #0098f9; 
 }
 
 input {
@@ -8,21 +15,28 @@ input {
 }
 
 /* HTML */
+
 html.base_class { 
     background-color: black;
     font-family: "Arial";
     color: #0098f9; 
 }
 
+h1 {
+    color: white;
+    font-size: 24px;
+}
+
 /* HEADER */
 
 #header {
-
 }
 
 div.title {  
     height: 80px;
-    padding-left: 50px;
+    margin: auto;
+    width: 80%;
+    min-width: 800px;
     border-bottom: 1px solid #404040;
 }
 
@@ -37,9 +51,10 @@ div.title img {
     display: inline;
 }
 
-div.title form {
+form.search {
     display: inline;
-    margin-left: 50px;
+    margin: 6px;
+    
 }
 
 form.search input[type=text] {
@@ -49,11 +64,12 @@ form.search input[type=text] {
     color: white;
     border: none;
     padding: 0px 10px 0px 10px;
+    width: 180px;
 }
 
 a.mykp {
-    margin-left: 100px;
-    text-decoration: none;
+    float: right;
+    margin-left: 1%;
     color: white;
     padding: 10px;
     background-color: #0098f9;
@@ -63,7 +79,7 @@ a.mykp {
 
 div.menu {
     width: 85%;
-    min-width: 850px;
+    min-width: 800px;
     margin: auto;
     color: #0098f9;
     text-align: center;
@@ -82,7 +98,7 @@ div.menu a:hover {
 }
 
 div.menu ul {
-    padding: 20px;
+    padding-bottom: 10px;
 }
 
 div.menu li {
@@ -94,30 +110,25 @@ li.current a:hover {
     background-color:#833f00;
 }
 
-#login-input {
-    width: 120px;
-}
-
 input.button {
     background-color: #0098f9;
     color: white;
     border: none;
     height: 25px;
-    width: 80px;
+    width: 60px;
     margin-left: 5px;
     vertical-align: middle;
 }
 
 /* FOOTER */
 div.footer {
+    margin-top: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     width: 100%;
-    min-width: 850px;
+    min-width: 800px;
     background-color: #404040;
     text-align: center;
-    bottom: 0px;
-    position: absolute;
-    padding: 0px 0px 10px 0px;
-    height: 40px;
 }
 
 div.footer a {
@@ -135,3 +146,21 @@ div.footer li {
     padding-left: 10px;
     padding-right: 10px;
 }
+
+/* FEATURED VIDEO */
+div.featured_video {
+    text-align: center;
+    margin: 0 auto;
+    float: left;
+}
+
+div.content a {
+    color: white;
+}
+
+#clear {
+    clear: both;
+}
+
+
+
