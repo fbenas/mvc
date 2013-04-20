@@ -1,7 +1,12 @@
 /* LONE ELEMENTS */
+* {
+ /*   margin: 0;*/
+}
+
 body {
     margin: 0px auto;
     min-height: 800px;
+    height: 100%;
 }
 
 a, a:visited {
@@ -20,6 +25,10 @@ html.base_class {
     background-color: black;
     font-family: "Arial";
     color: #0098f9; 
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -4em;
 }
 
 h1 {
@@ -121,13 +130,8 @@ input.button {
 }
 
 /* FOOTER */
-div.footer {
-    margin-top: 10px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    width: 100%;
-    min-width: 800px;
-    background-color: #404040;
+.footer, .push {
+    height: 4em;
     text-align: center;
 }
 
